@@ -1,0 +1,62 @@
+salarios_db <-read.csv("salarios.csv", header = T, sep = ",", dec = ".")
+
+attach(salarios_db)
+head(salarios_db)
+summary(salarios_db)
+
+sort(salarios_db$Salarios) 
+
+############1)      Para datos no agrupados:
+
+
+#/a.////////////
+mean(Salarios)
+median(Salarios)
+
+#//moda
+install.packages("modes")
+library(modes)
+modes(Salarios)
+
+
+
+#/b.////////////
+#Rango
+range(Salarios)
+#Varianza
+var(Salarios)
+#SD
+sd(Salarios)
+
+#/c.////////////
+install.packages("moments")#  /////////  ---------->Paquetes/Instalar paquetes/Mexico/moments
+library(moments)
+#///Coeficiente de variación
+100*sd(Salarios)/mean(Salarios)
+#///Coeficiente de asimetría
+skewness(Salarios)
+
+
+
+#///Coeficiente de curtosis
+kurtosis(Salarios)
+
+#/d.////////////
+#//////Resumen pentanumérico
+quantile(Salarios,type=6)
+
+#//////Diagrama de caja y bigotes
+boxplot(Salarios) 
+
+
+#IQR(Salarios)
+
+
+par(mfrow = c(2,1))
+ 
+boxplot(Salarios, horizontal = TRUE, ylim = c(2900, 8100), main = "salarios($) de personas activas", xlab="salarios",col= "green3")
+
+hist(Salarios, xlim = c(2900, 8100), main = "salarios($) de personas activas",col= "green3")
+
+ 
+par(mfrow = c(1,1))

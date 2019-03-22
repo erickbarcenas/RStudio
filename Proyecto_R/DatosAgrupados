@@ -1,0 +1,68 @@
+salarios_db <-read.csv("salarios.csv", header = T, sep = ",", dec = ".")
+attach(salarios_db)
+#head(salarios_db)
+sort(Salarios)
+
+histograma = function(X) {
+    
+    k = nclass.Sturges(X)  # calcula Histograma y Tabla de Frecuencia con Sturges.
+    
+    Rango = ceiling(max(X) - min(X))  #Cálculo rango
+    a = Rango/k #Cálculo ancho de clase.
+    
+    LimClasInf = numeric(k)  #Cálculo límites de clase inferiores
+    
+	LimClasInf[1] = min(X) 
+	for (i in 2:k) {
+        LimClasInf[i] = LimClasInf[i - 1] + a
+    }
+    LimClasInf = round(LimClasInf, 2)
+    
+    LimClasSup = numeric(k)  #Cálculo limites de clase superiores
+    LimClasSup[1] = LimClasInf[1] + a
+    for (i in 2:k) {
+        LimClasSup[i] = LimClasSup[i - 1] + a
+    }
+    LimClasSup = round(LimClasSup, 2)
+    MarClas = numeric(k)  #Cálculo marcas de clase
+    for (i in 1:k) {
+        MarClas[i] = (LimClasInf[i] + LimClasSup[i])/2
+    }
+    m = round(MarClas, 2)
+    
+    f = numeric(k)
+    for (i in 1:k) {
+        f[i] = length(X[X >= LimClasInf[i] & X < LimClasSup[i]])
+    }
+    fa = cumsum(f)  #Cálculo Frecuencias Acumuladas
+    fr = round(f/sum(f), 4)  #Cálculo Frecuencias Relativas
+    fra = round(cumsum(fr), 4)  #Cálculo de Frecuencias Relativas Acumuladas 
+    
+    # Tabla de Frecuencias
+    LI= LimClasInf
+	LS = LimClasSup
+    TabFreq = data.frame(LI, LS, m, f, fa, fr, 
+        fra)
+    print(TabFreq)
+    
+    par(mfrow = c(1, 2))
+    
+    # Histograma con Polígono de Frecuencias
+    TabFreq.bar = barplot(TabFreq$f, space = 0, font = 2, col.main = "darkgreen", 
+        main = "Histograma y Polígono de Frecuencias", xlab = "Salarios [$]", ylab = "Frecuencias", 
+        names.arg = MarClas, col = "green3")
+    lines(x = TabFreq.bar, y = TabFreq$f, col = "red")
+    points(x = TabFreq.bar, y = TabFreq$f, col = "red")
+
+  # Generando Ojiva
+    plot(TabFreq$m, TabFreq$fra, col = "red", ylab = "Frecuencias Relativas Acumuladas", 
+        xlab = "Salarios [$]")
+    lines(TabFreq$m, TabFreq$fra, col = "red")
+    title(main = "Ojiva", col.main = "darkgreen")
+
+
+
+}
+
+histograma(Salarios)
+

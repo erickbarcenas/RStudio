@@ -1,0 +1,79 @@
+
+#1-Capturar los datos
+
+salarios_db <-read.csv("salarios.csv", header = T, sep = ",", dec = ".")
+attach(salarios_db)
+head(salarios_db)
+
+
+#2-Graficar el histograma y ajustarlo
+#hist(Salarios,breaks = 200)
+hist(Salarios, breaks = "Sturges", xlab= "Salarios($)", ylab="Frecuencias",xlim = c(2900, 8100), main = "Salarios($) de personas activas",col= "green3", freq = TRUE, las=1)
+
+#Agregando lineas de densidad
+#lines(density(Salarios))
+#cambiando de colores
+#lines(density(Salarios, adjust=2), col="red",lwd=2)
+
+#4-Obtener datos con plot=F, y guardarlos en una variable
+#no. de clases
+k <- nclass.Sturges(Salarios)
+# Construcción de los intervalos mediante la función cut():
+intervalos <- cut(Salarios, breaks = k)
+
+#Decide su amplitud
+Rango = ceiling(max(Salarios) - min(Salarios))  #Cálculo rango
+a = Rango/k #Cálculo ancho de clase.
+
+#5-Guardar en variables los vectores de Límite inferior de los intervalos
+LI = min(Salarios)
+
+#6-Determinar y guardar los valores de los límites superiores de los intervalos
+LS = LI + a
+
+#7-De la variable de datos, obtener las frecuencias y guardarlas en una variable
+f = as.data.frame(table(Salarios))
+f
+
+#8-De la variable de datos, obtener las marcas de
+#clase y guardarlas en una variable
+#Usando el vector de frecuencias, se obtiene la
+#frecuencia acumulada con el comando
+#cumsum(), y se guarda en una variable
+
+midpoints <- function(x, dp=2){
+                                                      lower <- as.numeric(gsub(',.*','',gsub('\\(|\\[|\\)|\\]','', x)))
+                                                      upper <- as.numeric(gsub('.*,','',gsub('\\(|\\[|\\)|\\]','', x)))
+                                                      return(round(lower+(upper-lower)/2, dp))
+                                                     }
+                     # Agregamos la columna de puntos medios de los intervalos de clase                                 
+                       tabla2 <- transform(tabla2, MC = midpoints(intervalos))
+
+tabla2 <- transform(f, F.Acum = cumsum(Freq), F.R = prop.table(Freq))
+
+tabla2
+
+#9-Usando el vector de frecuencias se obtiene la 
+#frecuencia relativa y se guarda en una variable
+
+tabla2 <- as.data.frame(table(intervalos))
+ 
+
+# Añadimos frecuencias acumuladas y frecuencias relativas
+                       tabla2 <- transform(tabla2, F.Acum = cumsum(Freq), F.R = prop.table(Freq))
+
+
+#10-Para la frecuencia acumulada relativa, la
+#variable que contiene a la frecuencia
+#acumulada se divide entre la suma de las
+#frecuencias y se guarda en una variable
+
+#11-Se unen todas las variables:
+#tabla=data.frame(cbind(LI,LS,f,m,fr,fa,fra))
+
+tabla=data.frame(cbind(LI,LS,f,m,fr,fa,fra))
+
+#12-Finalmente se utiliza el comando View() para
+#observar el resultado final
+
+View(tabla)
