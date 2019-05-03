@@ -1,0 +1,153 @@
+science and technology
+
+Intervalo deconfianza
+elementos
+a interpretación
+cálculos con confianza
+factores que influyen en la amplitud
+Detectar resultados engañosos
+cómo definir,calcular einterpretar los
+intervalos deconfianza más utilizados,y cómo detectar estimaciones engañosas.
+
+
+Las características de una población sellaman parámetros
+y los de la muestra estadísticos
+
+Un parámetro es un único número que describea una población
+Un estadístico es un único número que describea una muestra
+.
+
+--->intervalo de confianza
+
+Un estadístico más/menos un margen deerror
+Lo normal es que desconozcas los valores de parámetros poblacionales, de manera quetomas muestras y
+utilizas estadísticos para dar la estimación posible.
+
+
+Por regla general, para estimar el valor de un parámetro setoma una muestra dela población y se utilizan estadísticos de esa muestra que permitan obtener una estimación válida.
+
+Algunas deestas estimaciones son más fáciles de obtener que otras
+
+Supongamos que quieres saber la respuesta a una ´pregunta
+hací que tomas una muestra y obtienes ciertos datos
+a los que les vas sumar y restar un número para indicar queestás dando un intervalo devalores
+posibles. El número que restas y sumas se llama margen de
+error (ME) el cuál quiere decir que los resultados de una muestra no son exactamenteiguales a los que habrías obtenido si hubieras incluido a toda la población
+
+El extremo inferior del intervalo es el estadístico menos el margen de
+error,y el extremo superior es el estadístico más el margen deerror
+
+.Este grado deconfianza seexpresa como porcentajey se denomina nivel de confianza.
+
+
+-------------------------------------
+1.Elegir el nivel de confianza y el tamaño muestral.
+2. Seleccionar una muestra aleatoria de elementos de la población.
+3. Recopilar datos fiables y relevantes de los elementos que componen la muestra.
+4. Resumir los datos en un estadístico, por ejemplo una media o una proporción.
+5. Calcular el margen de error.
+6. Sumar y restar el margen de error al estadístico para obtener la estimación final del parámetro. Este paso calcula el intervalo de
+confianza paraese parámetro.
+--------------------------------------------
+95% probabilidad de que a largo plazo  pesque en cualquier intento = nivel deconfianzaes del 95%
+
+Este 5%
+mideexclusivamentelos errores debidos a la probabilidad aleatoria,y no incluyeel sesgo.
+antes deaceptar el margen deerror quete digan,averigües cómo
+serecopilaron los datos
+Por tanto,antes decreerte un
+estudio debes hacer algunas preguntas
+
+La amplitud detu intervalo deconfianzaes dos veces el margen deerror
+
+
+Cuando realizas unaestimación utilizando un intervalo deconfianza,el objetivo final es queeseintervalo seaestrecho, porqueeso significa que
+estás centrándoteen el punto dondeseencuentrael parámetro.Tener quesumar y restar un margen deerror grande hace quetu resultado sea
+mucho menos preciso.
+
+
+
+La mayoría dela genteseconforma con un margen deerror comprendido entreel 2 y el 3% cuando la propiaestimación es un
+porcentaje(por ejemplo el porcentaje de mujeres, derepublicanos o defumadores).
+
+
+¿Qué nivel deconfianza suelen utilizar los investigadores? Yo hevisto niveles deconfianzaentreel 80 y el 99%, pero el más frecuentees el 95%
+
+
+La variabilidad en los resultados muestrales se mide por el número deerrores estándares. Un error estándar es similar a la desviación estándar
+de un conjunto de datos, sólo queel error estándar seaplica a medias muestrales o porcentajes muestrales que podrías haber obtenido si
+hubieras tomado otras muestras.
+
+
+
+1 - cerciorarse de quelos datos son válidos.
+2- Los resultados estadísticos sólo son válidos si los datos también lo son, de manera quela precisión real
+dependetanto dela calidad delos datos como del tamaño muestral. 
+
+
+
+
+
+cuando la desviación estándar (el numerador) aumenta,el error estándar (la fracción entera) también aumenta
+
+
+
+
+Podríamos predecir de manera más o
+menos fiablela oferta deempleos parael próximo año o dos años, pero a ocho años vistaes mucho más difícil.
+
+
+El número medio de bates utilizados por un jugador 
+podría hallarse preguntando a
+los propios jugadores
+
+
+a con ayuda de un cronómetro. Habría que medir
+la aceleración media de muchos coches
+o, siempre bajo las mismas condiciones de
+conducción
+
+
+No todas las estadísticas son iguales
+n. Para determinar si unaestadísticaes fiabley creíble, piensa si
+tienesentido y qué harías tú para obtener unaestimación.
+
+
+Vincular un estadístico a un parámetro
+
+
+
+Por ejemplo, imagina quetrabajas parael Departamento de Recursos Naturales y quieres estimar,con un intervalo deconfianza del 95%, la
+longitud media delos alevines detruchaen una piscifactoría.
+
+Pongamos que coges una muestra de 100 alevines y determinas que la longitud media es 7,5 centímetros, y supongamos que la desviación
+estándar es 2,3 centímetros.
+
+Tu intervalo de confianzas (el extremo inferior del intervalo es 7,5 – 0,45 = 7,05 centímetros,y el extremo superior es 7,5 + 0,45 = 7,95 centímetros).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<<<<<<<<<<
+Si la característica medidaes categórica generalmentese quiereestimar la
+proporción (o porcentaje) de personas dela población que pertenecen a cierta categoría deinterés
+
+
+
+
+
+ propósito decomparar dos poblaciones Cuando la característica comparadaes numérica el
+objeto deinterés es la magnitud dela diferenciaentrelas medias delas dos poblaciones. Paraestimar la diferenciaentre dos medias poblacionales, µ1
+- µ2
